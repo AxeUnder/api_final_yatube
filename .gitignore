@@ -148,3 +148,4 @@ dmypy.json
 # папки со статикой и медиа
 media/
 yatube_api/posts/static/
+!/yatube_api/posts/migrations/0003_auto_20230409_2040.py
