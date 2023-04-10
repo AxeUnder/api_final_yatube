@@ -1,5 +1,5 @@
 # TODO:  Напишите свой вариант
-from rest_framework import viewsets, filters, permissions, pagination
+from rest_framework import viewsets, filters, permissions, pagination, mixins
 from rest_framework.generics import get_object_or_404
 
 from posts.models import Post, Group
@@ -44,7 +44,9 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = GroupSerializer
 
 
-class FollowViewSet(viewsets.ModelViewSet):
+class FollowViewSet(mixins.CreateModelMixin,
+                    mixins.ListModelMixin,
+                    viewsets.GenericViewSet):
     """ViewSet модели Follow."""
     serializer_class = FollowSerializer
     permission_classes = (permissions.IsAuthenticated,)
