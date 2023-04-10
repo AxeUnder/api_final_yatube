@@ -12,10 +12,24 @@ from posts.models import Comment, Post, Group, Follow, User
 
 class Base64ImageField(serializers.ImageField):
     """Serializer поля image."""
+    # Создадим кастомное поле для отправки изображений в кодировке base64.
+    # Syntax RFC2397
+    #    dataurl    := "data:" [ mediatype ] [ ";base64" ] "," data
+    #    mediatype  := [ type "/" subtype ] *( ";" parameter )
+    #    data       := *urlchar
+    #    parameter  := attribute "=" value
     def to_internal_value(self, data):
+        # Если полученный объект строка, и эта строка
+        # начинается с 'data:image'...
         if isinstance(data, str) and data.startswith('data:image'):
+            # ...начинаем декодировать изображение из base64.
+            # Сначала нужно разделить строку на части.
             img_format, img_str = data.split(';base64,')
+            # Все верно, здесь переменная ext отвечает за извлечение
+            # расширения файла при декодировании.
             ext = img_format.split('/')[-1]
+            # Затем декодирование самих данных и добавление результата в файл,
+            # которому дается название по шаблону.
             data = ContentFile(base64.b64decode(img_str), name='img.' + ext)
 
         return super().to_internal_value(data)
