@@ -138,3 +138,6 @@ python3 manage.py runserver
 
 Документация:
 `/redoc/`
+
+## Автор
+> [AxeUnder](https://github.com/AxeUnder)
