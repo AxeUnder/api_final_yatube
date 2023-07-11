@@ -97,7 +97,7 @@
 
 Клонировать репозиторий и перейти в него в командной строке:
 ```bash
-git clone https://github.com/Digital-Stalker/api_final_yatube.git
+git clone https://github.com/AxeUnder/api_final_yatube.git
 cd api_final_yatube
 ```
 
