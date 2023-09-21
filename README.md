@@ -6,6 +6,7 @@
 **Инструменты и стек**:** #Python #Django #API #RestFramework #JWTAuthentication #Djoser #Pillow #PyCharm #Postman
 
 ## Возможности
+Просмотр главной страницы постов с их количеством и пагинацией.
 **GET `http://127.0.0.1:8000/api/v1/posts/`**
 ```json
 {
@@ -24,6 +25,7 @@
   ]
 }
 ```
+Авторизованные пользователи могут создавать собственные посты.
 **POST `http://127.0.0.1:8000/api/v1/posts/`**
 ```json
 {
@@ -90,7 +92,6 @@
 ```
 
 ## Как запустить проект
-
 Клонировать репозиторий и перейти в него в командной строке:
 ```bash
 git clone https://github.com/AxeUnder/api_final_yatube.git
