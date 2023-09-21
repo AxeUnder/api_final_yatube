@@ -140,5 +140,6 @@ python3 manage.py runserver
 Документация:
 `/redoc/`
 
-## Автор
-> [AxeUnder](https://github.com/AxeUnder)
+## Об авторе
+Python-разработчик
+> [AxeUnder](https://github.com/AxeUnder).
