@@ -1,8 +1,12 @@
 # api_final_yatube
 
+## Описание
 Это api по сути является backend-приложением к проекту yatube (соц. сети), которое позволяет отправлять запросы (GET, POST, PATCH, PUT и DELETE) на сервер к базе данных приложения. С их помощью можно запросить список постов или авторизовавшись опубликовать собственный.
-### **Например:**
-#### GET `http://127.0.0.1:8000/api/v1/posts/`
+
+**Инструменты и стек**:** #Python #Django #API #RestFramework #JWTAuthentication #Djoser #Pillow #PyCharm #Postman
+
+## Возможности
+**GET `http://127.0.0.1:8000/api/v1/posts/`**
 ```json
 {
   "count": 123,
@@ -20,7 +24,7 @@
   ]
 }
 ```
-#### POST `http://127.0.0.1:8000/api/v1/posts/`
+**POST `http://127.0.0.1:8000/api/v1/posts/`**
 ```json
 {
   "text": "string",
@@ -39,8 +43,8 @@
   "group": 0
 }
 ```
-## Реализована возможность создавать пользователя и получать JWT-токен.
-#### POST `http://127.0.0.1:8000/api/v1/jwt/create/`
+Реализована возможность создавать пользователя и получать JWT-токен.
+**POST `http://127.0.0.1:8000/api/v1/jwt/create/`**
 ```json
 {
   "username": "string",
@@ -54,8 +58,8 @@
   "access": "string"
 }
 ```
-## Можно комментировать посты и подписываться на авторов.
-#### POST `http://127.0.0.1:8000/api/v1/follow/`
+Можно комментировать посты и подписываться на авторов.
+**POST `http://127.0.0.1:8000/api/v1/follow/`**
 ```json
 {
   "following": "string"
@@ -68,7 +72,7 @@
   "following": "string"
 }
 ```
-#### POST `http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/`
+**POST `http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/`**
 ```json
 {
 "text": "string"
@@ -85,16 +89,7 @@
 }
 ```
 
-## Технологии:
-
-- Python;
-- Django;
-- Rest Framework;
-- JWTAuthentication;
-- djoser;
-
-
-# Как запустить проект
+## Как запустить проект
 
 Клонировать репозиторий и перейти в него в командной строке:
 ```bash
@@ -126,7 +121,7 @@ python3 manage.py runserver
 ```
 
 
-# Примеры запросов
+#№ Примеры запросов
 
 Вывод списка постов:
 `/api/v1/posts/`
